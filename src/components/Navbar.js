@@ -4,12 +4,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [click, setClicked] = useState("off");
+  const [isClick, setClick] = useState(true);
   var changer = true;
-  const handleClick = () => {
-    changer = !changer;
-    setClicked("on");
-  };
+  const handleClick = () => {};
 
   const style = {
     navbar: css`
@@ -60,7 +57,9 @@ const Navbar = () => {
         <Link to="News">News</Link>
         <Link to="contact">Contact</Link>
       </ul>
-      <button onClick={handleClick}>{click}</button>
+      <button onClick={() => setClick(!isClick)}>
+        {isClick ? "ON" : "OFF"}
+      </button>
     </nav>
   );
 };
