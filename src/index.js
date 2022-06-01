@@ -6,6 +6,7 @@ import Notfound from "./pages/Notfound";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
+import Character from "./pages/Character";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,6 +17,7 @@ root.render(
           <Route path="/home" element={<Home />} />
           <Route path="/news" element={<News />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/character/:id" element={<Character/>}></Route>
           <Route path="*" element={<Notfound />}></Route>
         </Route>
       </Routes>

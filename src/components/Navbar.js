@@ -2,7 +2,7 @@
 import { css, ThemeProvider, useTheme } from "@emotion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import FeatherIcon from 'feather-icons-react';
 const Navbar = () => {
   const [isClick, setClick] = useState(true);
   var changer = true;
@@ -34,12 +34,18 @@ const Navbar = () => {
         gap: 10px;
 
         & a {
-          color: green;
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+          font-size: 20px;
         }
       }
     `,
     logo: css`
       color: black;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
     `,
   };
   return (
@@ -54,8 +60,8 @@ const Navbar = () => {
         <button type="submit">Search</button>
       </form>
       <ul>
-        <Link to="News">News</Link>
-        <Link to="contact">Contact</Link>
+        
+        <Link to="contact"> <FeatherIcon icon="phone" width="20px"/> </Link>
       </ul>
       <button onClick={() => setClick(!isClick)}>
         {isClick ? "ON" : "OFF"}
