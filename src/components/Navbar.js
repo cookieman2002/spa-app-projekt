@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { css, ThemeProvider, useTheme } from "@emotion/react";
-import { useState } from "react";
+import { css } from "@emotion/react";
+
 import { Link } from "react-router-dom";
 import FeatherIcon from 'feather-icons-react';
+import Button from "./Button";
 const Navbar = () => {
-  const [isClick, setClick] = useState(true);
-  var changer = true;
-  const handleClick = () => {};
+  
+  
 
   const style = {
     navbar: css`
@@ -63,9 +63,7 @@ const Navbar = () => {
         
         <Link to="contact"> <FeatherIcon icon="phone" width="20px"/> </Link>
       </ul>
-      <button onClick={() => setClick(!isClick)}>
-        {isClick ? "ON" : "OFF"}
-      </button>
+      <Button/>
     </nav>
   );
 };
