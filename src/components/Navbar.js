@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import FeatherIcon from 'feather-icons-react';
 import Button from "./Button";
+import Searchbar from "./Searchbar";
 const Navbar = () => {
   
   
@@ -19,15 +20,7 @@ const Navbar = () => {
       background-color: #f2f2f2;
       justify-content: space-between;
       border-radius: 15px;
-      & form {
-        & input {
-          width: 150px;
-          border-radius: 15px;
-          border: none;
-          padding: 10px;
-          margin-right: 10px;
-        }
-      }
+      
 
       & ul {
         display: flex;
@@ -55,10 +48,7 @@ const Navbar = () => {
           Home
         </Link>
       </div>
-      <form>
-        <input type="text" name="" placeholder="Search here" />
-        <button type="submit">Search</button>
-      </form>
+      <Searchbar/>
       <ul>
         
         <Link to="contact"> <FeatherIcon icon="phone" width="20px"/> </Link>
