@@ -2,13 +2,11 @@
 import { css } from "@emotion/react";
 
 import { Link } from "react-router-dom";
-import FeatherIcon from 'feather-icons-react';
+import FeatherIcon from "feather-icons-react";
 import Button from "./Button";
 import Searchbar from "./Searchbar";
+import Language from "./Language";
 const Navbar = () => {
-  
-  
-
   const style = {
     navbar: css`
       margin: 0 auto;
@@ -20,7 +18,6 @@ const Navbar = () => {
       background-color: #f2f2f2;
       justify-content: space-between;
       border-radius: 15px;
-      
 
       & ul {
         display: flex;
@@ -48,12 +45,15 @@ const Navbar = () => {
           Home
         </Link>
       </div>
-      <Searchbar/>
+      <Searchbar />
       <ul>
-        
-        <Link to="contact"> <FeatherIcon icon="phone" width="20px"/> </Link>
+        <Link to="contact">
+          {" "}
+          <FeatherIcon icon="phone" width="20px" />{" "}
+        </Link>
       </ul>
-      <Button/>
+      <Language />
+      <Button />
     </nav>
   );
 };
