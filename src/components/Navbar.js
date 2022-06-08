@@ -1,12 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
-import Button from "./Button";
 import Searchbar from "./Searchbar";
 import Language from "./Language";
+import {ThemeContext} from "./contexts/Context"
+
 const Navbar = () => {
+  const [isClick, setClick] = useState(true);
+  const {isSwitch, setIsSwitch} = useContext(ThemeContext)
   const style = {
     navbar: css`
       margin: 0 auto;
@@ -37,6 +40,9 @@ const Navbar = () => {
       font-size: 25px;
       font-weight: bold;
     `,
+    linkcolor: css`
+    color: ${darkmode}
+    `
   };
   return (
     <nav css={style.navbar}>
@@ -53,7 +59,9 @@ const Navbar = () => {
         </Link>
       </ul>
       <Language />
-      <Button />
+      <button     onClick={() => setClick(!isClick)}>
+    {isClick ? "ON" : "OFF"}
+  </button>
     </nav>
   );
 };

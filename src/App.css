@@ -1,10 +1,9 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  color: #292929;
 }
-body{
-  background-color: #292929;
-}
+
 
 .App-logo {
   height: 40vmin;
