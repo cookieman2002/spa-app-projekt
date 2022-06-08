@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import ThemeContext from "./contexts/Context";
+import {ThemeContext} from "./contexts/ThemeContext";
 
 
 
@@ -19,7 +19,7 @@ function App() {
   return (
     <ThemeContext.Provider value= {{isSwitch, setIsSwitch}}>
 
-    <div className={isSwitch.darkmode ? "darkmode": ""}>
+    <div className={isSwitch.darkmode ? "dark-mode": ""}>
       <Navbar />
       <Outlet />
     </div>

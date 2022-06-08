@@ -2,8 +2,11 @@ import Usefetch from "../hooks/Usefetch"
 import { useParams } from "react-router-dom";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import {ThemeContext} from "../contexts/ThemeContext"
+import { useContext } from "react";
 
 const Characterdetail = () => {
+  const { isSwitch }  = useContext(ThemeContext)
   const { id } = useParams();
   const { error, isPending, data } = Usefetch(
     "https://rickandmortyapi.com/api/character/" + id
@@ -20,7 +23,7 @@ const Characterdetail = () => {
         "c c c c"
         "c c c c";
       & div {
-        background-color: #d1d1d1;
+        background-color: ${isSwitch.darkmode ? "#2f3136" : "#d1d1d1"};
         display: flex;
         flex-direction: column;
         align-items: center;

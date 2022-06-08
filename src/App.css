@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  color: #292929;
+  
 }
 
 
@@ -29,6 +29,10 @@
 
 .App-link {
   color: #61dafb;
+}
+.dark-mode{ 
+  color: #fff;
+  background-color: #292929;
 }
 
 @keyframes App-logo-spin {

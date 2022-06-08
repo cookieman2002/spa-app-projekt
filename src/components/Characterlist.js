@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-
+import { ThemeContext } from "../contexts/ThemeContext";
 import Usefetch from "../hooks/Usefetch";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 const Characterlist = () => {
   const [counter, setCounter] = useState(1);
@@ -23,8 +23,9 @@ const Characterlist = () => {
   );
 
   if (isPending === false) {
-    console.log(data);
+    
   }
+  const { isSwitch }  = useContext(ThemeContext)
 
   const styles = {
     characterlist: css`
@@ -41,9 +42,10 @@ const Characterlist = () => {
 
       & div {
         text-align: center;
+        
 
         & a {
-          color: white;
+          color: ${isSwitch.darkmode ? "#ffff" : "#292929"};
           text-decoration: none;
         }
       }
@@ -53,7 +55,8 @@ const Characterlist = () => {
       gap: 40px;
 
       & button {
-        background-color: white;
+        background-color: ${isSwitch.darkmode ? "#2f3136" : "#ced4da"};
+        color: ${isSwitch.darkmode ? "#ffff" : "#292929"};
         border: none;
         border-radius: 20px;
         padding: 10px;

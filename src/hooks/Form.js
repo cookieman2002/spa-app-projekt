@@ -1,13 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 import { useForm } from "react-hook-form";
 
 const Form = () => {
+  const { isSwitch }  = useContext(ThemeContext)
   const styles = {
     button: css`
       width: 50%;
       cursor: pointer;
+      color: ${isSwitch.darkmode ? "#ffff" : "#292929"};
     `,
     form: css`
       display: flex;
@@ -16,21 +19,22 @@ const Form = () => {
       gap: 1em;
 
       & div {
-        color: white;
+        color: ${isSwitch.darkmode ? "#ffff" : "#292929"};
       }
       & span {
         gap: 1px;
-        color: white;
+        color: ${isSwitch.darkmode ? "#ffff" : "#292929"};
         margin-left: 250px;
       }
       & label {
-        color: white;
+        color: ${isSwitch.darkmode ? "#ffff" : "#292929"};
       }
       & input {
         border-radius: 15px;
         border: none;
         height: 30px;
         width: 400px;
+        background-color: ${isSwitch.darkmode ? "#2f3136" : "#f2f2f2"}
       }
       & textarea {
         border-radius: 15px;
