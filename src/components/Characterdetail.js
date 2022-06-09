@@ -1,12 +1,12 @@
-import Usefetch from "../hooks/Usefetch"
-import { useParams } from "react-router-dom";
 /** @jsxImportSource @emotion/react */
+import Usefetch from "../hooks/Usefetch";
+import { useParams } from "react-router-dom";
 import { css } from "@emotion/react";
-import {ThemeContext} from "../contexts/ThemeContext"
+import { ThemeContext } from "../contexts/ThemeContext";
 import { useContext } from "react";
 
 const Characterdetail = () => {
-  const { isSwitch }  = useContext(ThemeContext)
+  const { isSwitch } = useContext(ThemeContext);
   const { id } = useParams();
   const { error, isPending, data } = Usefetch(
     "https://rickandmortyapi.com/api/character/" + id
@@ -44,10 +44,8 @@ const Characterdetail = () => {
         margin-top: 10px;
       }
       & div {
-        display: grid;
-        grid-template-columns: repeat(2, 2fr);
         margin-top: 10px;
-        gap: 90px;
+        gap: 40px;
         font-size: 20px;
       }
     `,
@@ -58,8 +56,6 @@ const Characterdetail = () => {
         margin-top: 10px;
       }
       & div {
-        display: grid;
-        grid-template-columns: repeat(2, 2fr);
         gap: 10px;
       }
     `,

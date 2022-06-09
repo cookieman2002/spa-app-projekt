@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
 import Searchbar from "./Searchbar";
 import Language from "./Language";
-import {ThemeContext} from "../contexts/ThemeContext"
+import { ThemeContext } from "../contexts/ThemeContext";
+import Button from "./Button";
 
 const Navbar = () => {
-  
-  const {isSwitch, setIsSwitch} = useContext(ThemeContext)
+  const { isSwitch, setIsSwitch } = useContext(ThemeContext);
   const style = {
     navbar: css`
       margin: 0 auto;
@@ -18,7 +18,7 @@ const Navbar = () => {
       display: flex;
 
       border-bottom: 1px solid ${isSwitch.darkmode ? "#2f3136" : "#f2f2f2"};
-      background-color:${isSwitch.darkmode ? " #2f3136" : "#f2f2f2"};
+      background-color: ${isSwitch.darkmode ? " #2f3136" : "#f2f2f2"};
       justify-content: space-between;
       border-radius: 15px;
 
@@ -40,7 +40,6 @@ const Navbar = () => {
       font-size: 25px;
       font-weight: bold;
     `,
-    
   };
   return (
     <nav css={style.navbar}>
@@ -52,14 +51,11 @@ const Navbar = () => {
       <Searchbar />
       <ul>
         <Link to="contact" css={style.linkcolor}>
-          
           <FeatherIcon icon="phone" width="20px" />
         </Link>
       </ul>
       <Language />
-      <button  onClick={() => setIsSwitch({ darkmode: !isSwitch.darkmode, })}> 
-      switch
-  </button>
+      <Button button={isSwitch.darkmode ? "OFF" : "ON"} />
     </nav>
   );
 };
