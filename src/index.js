@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
 import Character from "./pages/Character";
-import FormYup from "./hooks/Formyup";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
