@@ -19,7 +19,6 @@ root.render(
           <Route path="/news" element={<News />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/character/:id" element={<Character />}></Route>
-          <Route path="/yup" element={<FormYup />}></Route>
           <Route path="*" element={<Notfound />}></Route>
         </Route>
       </Routes>

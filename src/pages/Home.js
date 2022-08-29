@@ -13,7 +13,7 @@ const styles = {
 };
 
 const Home = () => {
-  const { inputText, setInputText } = Searchbar();
+  const { inputText } = Searchbar();
 
   return (
     <div css={styles.characterlist_outer}>

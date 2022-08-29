@@ -14,7 +14,7 @@ const Searchbar = () => {
       }
     `,
   };
-  const [inputText, setInputText] = useState("");
+  const [ setInputText] = useState("");
   let inputHandler = (e) => {
     var lowercase = e.target.value.toLowerCase();
     setInputText(lowercase);
