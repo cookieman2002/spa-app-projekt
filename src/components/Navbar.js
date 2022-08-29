@@ -9,7 +9,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import Button from "./Button";
 
 const Navbar = () => {
-  const { isSwitch, setIsSwitch } = useContext(ThemeContext);
+  const { isSwitch } = useContext(ThemeContext);
   const style = {
     navbar: css`
       margin: 0 auto;
@@ -20,7 +20,6 @@ const Navbar = () => {
       border-bottom: 1px solid ${isSwitch.darkmode ? "#2f3136" : "#f2f2f2"};
       background-color: ${isSwitch.darkmode ? " #2f3136" : "#f2f2f2"};
       justify-content: space-between;
-      border-radius: 15px;
 
       & ul {
         display: flex;
@@ -51,7 +50,11 @@ const Navbar = () => {
       <Searchbar />
       <ul>
         <Link to="contact" css={style.linkcolor}>
-          <FeatherIcon icon="phone" width="20px" />
+          <FeatherIcon
+            icon="phone"
+            width="20px"
+            color={isSwitch.darkmode ? "#ffff" : "#292929"}
+          />
         </Link>
       </ul>
       <Language />

@@ -5,7 +5,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { useForm } from "react-hook-form";
 
 const Form = () => {
-  const { isSwitch }  = useContext(ThemeContext)
+  const { isSwitch } = useContext(ThemeContext);
   const styles = {
     button: css`
       width: 50%;
@@ -17,6 +17,7 @@ const Form = () => {
       flex-direction: column;
       align-items: center;
       gap: 1em;
+      min-height: 86.25vh;
 
       & div {
         color: ${isSwitch.darkmode ? "#ffff" : "#292929"};
@@ -34,12 +35,14 @@ const Form = () => {
         border: none;
         height: 30px;
         width: 400px;
-        background-color: ${isSwitch.darkmode ? "#2f3136" : "#f2f2f2"}
+        background-color: ${isSwitch.darkmode ? "#2f3136" : "#f2f2f2"};
+        color: ${isSwitch.darkmode ? "#ffff" : "#292929"};
       }
       & textarea {
         border-radius: 15px;
         resize: none;
         font-size: 20px;
+        background-color: ${isSwitch.darkmode ? "#2f3136" : "#f2f2f2"};
       }
     `,
   };
@@ -67,9 +70,7 @@ const Form = () => {
           minLength: 1,
         })}
       />
-      {errors.firstName?.type === "required" && (
-        <div>First name is required</div>
-      )}
+      {errors.firstName?.type === "required" && <div>Name is required</div>}
       {errors.firstName?.type === "maxLength" && (
         <div>Your name is too long</div>
       )}
@@ -102,7 +103,6 @@ const Form = () => {
           maxLength: 500,
         })}
       ></textarea>
-      <span>words left {wordCount}</span>
       {errors.message?.type === "required" && <div>a message is required</div>}
       {errors.message?.type === "minLength" && (
         <div>Your message is too short</div>
